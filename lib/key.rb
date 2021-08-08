@@ -17,6 +17,5 @@ class Key
     a = @key.chars.each_cons(2).reduce([]) do |array, numbers|
       array << numbers.join.to_i
     end
-    require 'pry'; binding.pry
   end
 end
