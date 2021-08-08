@@ -10,13 +10,13 @@ class Enigma
       key = Key.new(key)
     end
     if date.class != Offset
-      offset = Offset.new(date)
+      date = Offset.new(date)
     end
-    shift = Shift.new(key.keys, offset.offsets)
+    shift = Shift.new(key.keys, date.offsets)
     {
       encryption: message.encrypt(shift),
       key: key.number,
-      date: offset.date
+      date: date.date
     }
   end
 
@@ -26,13 +26,13 @@ class Enigma
       key = Key.new(key)
     end
     if date.class != Offset
-      offset = Offset.new(date)
+      date = Offset.new(date)
     end
-    shift = Shift.new(key.keys, offset.offsets)
+    shift = Shift.new(key.keys, date.offsets)
     {
       decryption: cipher.decrypt(shift),
       key: key.number,
-      date: offset.date
+      date: date.date
     }
   end
 end
