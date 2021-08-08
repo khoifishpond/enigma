@@ -1,7 +1,5 @@
+require_relative './spec_helper'
 require './lib/key'
-require 'rspec'
-require 'simplecov'
-SimpleCov.start
 
 describe Key do
   before(:each) do

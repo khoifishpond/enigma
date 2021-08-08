@@ -1,10 +1,8 @@
+require_relative './spec_helper'
 require './lib/message'
 require './lib/key'
 require './lib/offset'
 require './lib/shift'
-require 'rspec'
-require 'simplecov'
-SimpleCov.start
 
 describe Message do
   message = Message.new("hello world!")
@@ -19,6 +17,10 @@ describe Message do
 
   it 'has content' do
     expect(message.content).to eq("hello world!")
+  end
+
+  it 'has an alphabet' do
+    expect(message.alphabet).to eq(("a".."z").to_a << " ")
   end
 
   it 'can separate content into arrays of characters' do

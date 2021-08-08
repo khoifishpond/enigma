@@ -1,8 +1,6 @@
+require_relative './spec_helper'
 require './lib/offset'
 require 'date'
-require 'rspec'
-require 'simplecov'
-SimpleCov.start
 
 describe Offset do
   offset = Offset.new("040895")
