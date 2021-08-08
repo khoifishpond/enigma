@@ -1,12 +1,14 @@
 require './lib/shift'
+require './lib/key'
+require './lib/offset'
 require 'rspec'
 require 'simplecov'
 SimpleCov.start
 
 describe Shift do
-  keys = [02, 27, 71, 15]
-  offsets = [1, 0, 2, 5]
-  shift = Shift.new(keys, offsets)
+  key = Key.new("02715")
+  offset = Offset.new("040895")
+  shift = Shift.new(key.keys, offset.offsets)
 
   it 'exists' do
     expect(shift).to be_a(Shift)
