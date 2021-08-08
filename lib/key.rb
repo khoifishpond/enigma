@@ -1,20 +1,21 @@
 class Key
-  attr_reader :digits
+  attr_reader :number
 
-  def initialize
-    @digits = (0..9).to_a
+  def initialize(number)
+    @number = number
   end
 
-  def generate
-    @key = ""
+  def self.generate
+    digits = (0..9).to_a
+    number = ""
     5.times do
-      @key << @digits.sample.to_s
+      number << digits.sample.to_s
     end
-    @key
+    new(number)
   end
 
-  def keys(key = @key)
-    key.chars.each_cons(2).reduce([]) do |array, numbers|
+  def keys
+    @number.chars.each_cons(2).reduce([]) do |array, numbers|
       array << numbers.join.to_i
     end
   end
