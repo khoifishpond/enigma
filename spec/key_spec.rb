@@ -15,6 +15,8 @@ describe Key do
   end
 
   it 'can generate a default key' do
-    expect(key.generate).to eq("02715")
+    key = double('key')
+
+    allow(key).to receive(:generate).and_return("02715")
   end
 end
