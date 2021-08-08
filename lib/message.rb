@@ -14,24 +14,28 @@ class Message
 
   def encrypt(shift)
     cipher = ""
-    separate.each do |chunk|
-      a = @alphabet[(@alphabet.index(chunk[0]) + shift.shifts[:A]) % @alphabet.size] unless chunk[0].nil?
-      b = @alphabet[(@alphabet.index(chunk[1]) + shift.shifts[:B]) % @alphabet.size] unless chunk[1].nil?
-      c = @alphabet[(@alphabet.index(chunk[2]) + shift.shifts[:C]) % @alphabet.size] unless chunk[2].nil?
-      d = @alphabet[(@alphabet.index(chunk[3]) + shift.shifts[:D]) % @alphabet.size] unless chunk[3].nil?
-      cipher << [a, b, c, d].compact.join
+    separate.each do |characters|
+      characters.each_with_index do |character, index|
+        if @alphabet.include?(character)
+          cipher << @alphabet[(@alphabet.index(characters[index]) + shift.shifts.values[index]) % @alphabet.size] unless characters[index].nil?
+        else
+          cipher << character
+        end
+      end
     end
     cipher
   end
 
   def decrypt(shift)
     message = ""
-    separate.each do |chunk|
-      a = @alphabet[(@alphabet.index(chunk[0]) - shift.shifts[:A]) % @alphabet.size] unless chunk[0].nil?
-      b = @alphabet[(@alphabet.index(chunk[1]) - shift.shifts[:B]) % @alphabet.size] unless chunk[1].nil?
-      c = @alphabet[(@alphabet.index(chunk[2]) - shift.shifts[:C]) % @alphabet.size] unless chunk[2].nil?
-      d = @alphabet[(@alphabet.index(chunk[3]) - shift.shifts[:D]) % @alphabet.size] unless chunk[3].nil?
-      message << [a, b, c, d].compact.join
+    separate.each do |characters|
+      characters.each_with_index do |character, index|
+        if @alphabet.include?(character)
+          message << @alphabet[(@alphabet.index(characters[index]) - shift.shifts.values[index]) % @alphabet.size] unless characters[index].nil?
+        else
+          message << character
+        end
+      end
     end
     message
   end
