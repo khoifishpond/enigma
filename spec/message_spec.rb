@@ -1,10 +1,8 @@
+require_relative './spec_helper'
 require './lib/message'
 require './lib/key'
 require './lib/offset'
 require './lib/shift'
-require 'rspec'
-require 'simplecov'
-SimpleCov.start
 
 describe Message do
   message = Message.new("hello world!")

@@ -1,9 +1,7 @@
+require_relative './spec_helper'
 require './lib/shift'
 require './lib/key'
 require './lib/offset'
-require 'rspec'
-require 'simplecov'
-SimpleCov.start
 
 describe Shift do
   key = Key.new("02715")

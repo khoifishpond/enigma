@@ -1,8 +1,6 @@
+require_relative './spec_helper'
 require './lib/enigma'
 require 'date'
-require 'rspec'
-require 'simplecov'
-SimpleCov.start
 
 describe Enigma do
   enigma = Enigma.new
