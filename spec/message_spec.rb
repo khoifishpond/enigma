@@ -1,10 +1,16 @@
 require './lib/message'
+require './lib/key'
+require './lib/offset'
+require './lib/shift'
 require 'rspec'
 require 'simplecov'
 SimpleCov.start
 
 describe Message do
   message = Message.new("hello world")
+  key = Key.new("02715")
+  offset = Offset.new("040895")
+  shift = Shift.new(key.keys, offset.offsets)
 
   it 'exists' do
     expect(message).to be_a(Message)
@@ -21,5 +27,9 @@ describe Message do
       ["r", "l", "d"]
     ]
     expect(message.separate).to eq(expected)
+  end
+
+  it 'encrypt a message' do
+    expect(message.encrypt(shift)).to eq("keder ohulw")
   end
 end
