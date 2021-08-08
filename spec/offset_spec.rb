@@ -15,10 +15,11 @@ describe Offset do
     expect(offset.date).to eq("040895")
   end
 
-  xit 'has a present date' do
+  it 'can generate a default date' do
+    default_date = Offset.generate
     present_date = Date.today.strftime("%d%m%y")
 
-    expect(offset.date).to eq(present_date)
+    expect(default_date.date).to eq(present_date)
   end
 
   xit 'can create four offsets from date' do
