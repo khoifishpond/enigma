@@ -12,6 +12,10 @@ describe Shift do
     expect(shift).to be_a(Shift)
   end
 
+  it 'has a key object' do
+    expect(shift.key).to be_a(Key)
+  end
+
   it 'has keys' do
     expect(shift.keys).to eq([02, 27, 71, 15])
   end
