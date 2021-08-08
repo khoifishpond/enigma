@@ -8,6 +8,7 @@ SimpleCov.start
 
 describe Message do
   message = Message.new("hello world")
+  cipher = Message.new("keder ohulw")
   key = Key.new("02715")
   offset = Offset.new("040895")
   shift = Shift.new(key.keys, offset.offsets)
@@ -31,5 +32,9 @@ describe Message do
 
   it 'encrypt a message' do
     expect(message.encrypt(shift)).to eq("keder ohulw")
+  end
+
+  it 'can decrypt a message' do
+    expect(cipher.decrypt(shift)).to eq("hello world")
   end
 end
