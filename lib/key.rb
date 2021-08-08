@@ -6,10 +6,10 @@ class Key
   end
 
   def generate
-    @key = ""
+    key = ""
     5.times do
-      @key << @digits.sample.to_s
+      key << @digits.sample.to_s
     end
-    @key
+    key
   end
 end
