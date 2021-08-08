@@ -5,26 +5,25 @@ SimpleCov.start
 
 describe Key do
   before(:each) do
-    @key = Key.new
+    @key = Key.new("02715")
   end
   
   it 'exists' do
     expect(@key).to be_a(Key)
   end
 
-  it 'has an array of digits' do
-    expect(@key.digits).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+  it 'has a number' do
+    expect(@key.number).to eq("02715")
   end
 
   it 'can generate a default key' do
-    key = double('key')
+    default_key = Key.generate
 
-    allow(key).to receive(:generate).and_return("02715")
+    expect(default_key).to be_a(Key)
+    expect(default_key.number.size).to eq(5)
   end
 
-  it 'can split up the the default key into 4 smaller keys' do
-    key = "02715"
-
-    expect(@key.keys(key)).to eq([02, 27, 71, 15])
+  it 'can split the key into an array of 4 smaller keys' do
+    expect(@key.keys).to eq([02, 27, 71, 15])
   end
 end
