@@ -17,7 +17,9 @@ class Message
     separate.each do |characters|
       characters.each_with_index do |character, index|
         if @alphabet.include?(character)
-          cipher << @alphabet[(@alphabet.index(characters[index]) + shift.shifts.values[index]) % @alphabet.size] unless characters[index].nil?
+          alphabet_index = @alphabet.index(characters[index])
+          shifted = shift.shifts.values[index]
+          cipher << @alphabet[(alphabet_index + shifted) % @alphabet.size] unless characters[index].nil?
         else
           cipher << character
         end
@@ -31,7 +33,9 @@ class Message
     separate.each do |characters|
       characters.each_with_index do |character, index|
         if @alphabet.include?(character)
-          message << @alphabet[(@alphabet.index(characters[index]) - shift.shifts.values[index]) % @alphabet.size] unless characters[index].nil?
+          alphabet_index = @alphabet.index(characters[index])
+          shifted = shift.shifts.values[index]
+          message << @alphabet[(alphabet_index - shifted) % @alphabet.size] unless characters[index].nil?
         else
           message << character
         end
