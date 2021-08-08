@@ -13,8 +13,8 @@ class Key
     @key
   end
 
-  def keys
-    @key.chars.each_cons(2).reduce([]) do |array, numbers|
+  def keys(key = @key)
+    key.chars.each_cons(2).reduce([]) do |array, numbers|
       array << numbers.join.to_i
     end
   end
