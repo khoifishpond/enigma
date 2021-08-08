@@ -51,4 +51,15 @@ describe Enigma do
 
     expect(enigma.decrypt(encrypted[:encryption], "02715")).to eq(expected)
   end
+
+  it "can encrypt a message with a random key and today's date" do
+    encrypted = enigma.encrypt("hello world")
+    expected = {
+      encryption: encrypted[:encryption],
+      key: encrypted[:key],
+      date: encrypted[:date]
+    }
+
+    expect(encrypted).to eq(expected)
+  end
 end
