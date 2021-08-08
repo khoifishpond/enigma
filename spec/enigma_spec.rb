@@ -12,7 +12,6 @@ describe Enigma do
 
   it 'can encrypt a message' do
     expected = {
-      # TODO: fix encryption value
       encryption: "keder ohulw",
       key: "02715",
       date: "040895"
@@ -23,7 +22,6 @@ describe Enigma do
 
   it 'can decrypt a message' do
     expected = {
-      # TODO: fix decryption value
       decryption: "hello world",
       key: "02715",
       date: "040895"
