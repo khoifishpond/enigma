@@ -6,10 +6,16 @@ class Key
   end
 
   def generate
-    key = ""
+    @key = ""
     5.times do
-      key << @digits.sample.to_s
+      @key << @digits.sample.to_s
     end
-    key
+    @key
+  end
+
+  def keys
+    a = @key.chars.each_cons(2).reduce([]) do |array, numbers|
+      array << numbers.join.to_i
+    end
   end
 end
