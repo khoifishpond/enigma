@@ -46,7 +46,7 @@ describe Enigma do
     expected = {
       decryption: "hello world",
       key: "02715",
-      date: Date.today.strftime("%d%m%y")
+      date: encrypted[:date]
     }
 
     expect(enigma.decrypt(encrypted[:encryption], "02715")).to eq(expected)
