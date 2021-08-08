@@ -40,4 +40,15 @@ describe Enigma do
 
     expect(enigma.encrypt("hello world", "02715"))
   end
+
+  it 'can decrypt a message with just a key' do
+    encrypted = enigma.encrypt("hello world", "02715")
+    expected = {
+      decryption: "hello world",
+      key: "02715",
+      date: Date.today.strftime("%d%m%y")
+    }
+
+    expect(enigma.decrypt(encrypted[:encryption], "02715")).to eq(expected)
+  end
 end
