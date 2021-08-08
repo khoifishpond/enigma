@@ -13,4 +13,8 @@ describe Key do
   it 'has an array of digits' do
     expect(key.digits).to eq([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
   end
+
+  it 'can generate a default key' do
+    expect(key.generate).to eq("02715")
+  end
 end
