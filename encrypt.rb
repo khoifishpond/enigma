@@ -9,12 +9,12 @@ message = handle.read
 
 enigma = Enigma.new
 encryption = enigma.encrypt(message)
-enrypted_text = encryption[:encryption]
+cipher = encryption[:encryption]
 key = encryption[:key]
 date = encryption[:date]
 
 writer = File.open(ARGV[1], 'w')
-writer.write(enrypted_text)
+writer.write(cipher)
 
 handle.close
 writer.close
