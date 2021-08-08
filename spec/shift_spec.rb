@@ -6,7 +6,7 @@ require './lib/offset'
 describe Shift do
   key = Key.new("02715")
   offset = Offset.new("040895")
-  shift = Shift.new(key.keys, offset.offsets)
+  shift = Shift.new(key, offset)
 
   it 'exists' do
     expect(shift).to be_a(Shift)
