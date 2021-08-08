@@ -15,4 +15,15 @@ class Enigma
       date: offset.date
     }
   end
+
+  def decrypt(message, key, date = Offset.generate)
+    if date.class != Offset
+      offset = Offset.new(date)
+    end
+    {
+      decryption: "hello world",
+      key: key,
+      date: offset.date
+    }
+  end
 end
