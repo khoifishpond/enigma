@@ -9,7 +9,7 @@ describe Message do
   cipher = Message.new("keder ohulw!")
   key = Key.new("02715")
   offset = Offset.new("040895")
-  shift = Shift.new(key.keys, offset.offsets)
+  shift = Shift.new(key, offset)
 
   it 'exists' do
     expect(message).to be_a(Message)
