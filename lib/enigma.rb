@@ -8,7 +8,7 @@ class Enigma
     message = Message.new(message.downcase)
     key = Key.new(key) if key.class != Key
     date = Offset.new(date) if date.class != Offset
-    shift = Shift.new(key.keys, date.offsets)
+    shift = Shift.new(key, date)
     {
       encryption: message.encrypt(shift),
       key: key.number,
@@ -20,7 +20,7 @@ class Enigma
     cipher = Message.new(cipher.downcase)
     key = Key.new(key) if key.class != Key
     date = Offset.new(date) if date.class != Offset
-    shift = Shift.new(key.keys, date.offsets)
+    shift = Shift.new(key, date)
     {
       decryption: cipher.decrypt(shift),
       key: key.number,
