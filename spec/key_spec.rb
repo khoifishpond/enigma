@@ -19,4 +19,10 @@ describe Key do
 
     allow(key).to receive(:generate).and_return("02715")
   end
+
+  it 'can split up the the default key into 4 smaller keys' do
+    keys = double('keys')
+
+    allow(keys).to receive(:keys).and_return([02, 27, 71, 15])
+  end
 end
