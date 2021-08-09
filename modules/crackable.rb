@@ -8,7 +8,7 @@ module Crackable
     until cipher.decrypt(shift).end_with?(" end") do
       cracked_key = Key.generate
       shift = Shift.new(cracked_key, date)
-      cipher.decrypt(shift)
+      # cipher.decrypt(shift)
     end
     cracked_key
   end
