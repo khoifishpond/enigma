@@ -1,7 +1,3 @@
-require './lib/key'
-require './lib/offset'
-require './lib/shift'
-require './lib/message'
 require './lib/enigma'
 
 handle = File.open(ARGV[0], 'r')
