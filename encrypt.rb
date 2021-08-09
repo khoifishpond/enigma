@@ -15,4 +15,4 @@ writer.write(cipher)
 handle.close
 writer.close
 
-puts "Created 'encrypted.txt' with the key #{key} and date #{date}"
+puts "Created '#{ARGV[1]}' with the key #{key} and date #{date}"

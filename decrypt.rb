@@ -13,4 +13,4 @@ writer.write(message)
 handle.close
 writer.close
 
-puts "Created 'decrypted.txt' with the key #{ARGV[2]} and date #{ARGV[3]}"
+puts "Created '#{ARGV[1]}' with the key #{ARGV[2]} and date #{ARGV[3]}"
