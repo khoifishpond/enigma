@@ -32,7 +32,7 @@ class Enigma
   end
 
   def crack(cipher, date = Offset.generate)
-    cipher = Message.new(cipher)
+    cipher = Message.new(cipher.downcase)
     date = Offset.new(date) if date.class != Offset
     key = brute_force(cipher, date)
     shift = Shift.new(key, date)
