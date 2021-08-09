@@ -6,7 +6,7 @@ require './modules/crackable'
 
 class Enigma
   include Crackable
-  
+
   def encrypt(message, key = Key.generate, date = Offset.generate)
     message = Message.new(message.downcase)
     key = Key.new(key) if key.class != Key
