@@ -15,8 +15,8 @@ class Key
   end
 
   def keys
-    @number.chars.each_cons(2).reduce([]) do |array, numbers|
-      array << numbers.join.to_i
+    @number.chars.each_cons(2).map do |numbers|
+      numbers.join.to_i
     end
   end
 end
