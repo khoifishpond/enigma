@@ -1,5 +1,6 @@
 require_relative './spec_helper'
 require './lib/enigma'
+require './lib/offset'
 require 'date'
 
 describe Enigma do
@@ -62,6 +63,14 @@ describe Enigma do
     }
 
     expect(encrypted).to eq(expected)
+  end
+
+  it 'can brute force its way to a cracked key' do
+    encrypted = enigma.encrypt("hello world end", "08304", "291018")
+    date = Offset.new("291018")
+    cipher = Message.new(encrypted[:encryption])
+
+    expect(enigma.brute_force(cipher, date).number).to eq("08304")
   end
 
   it 'can crack an encryption with a date' do
