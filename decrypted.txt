@@ -12,6 +12,10 @@ as i can. this is my substitute for pistol and ball. with a philosophical
 flourish cato throws himself upon his sword; i quietly take to the ship.
 there is nothing surprising in this. if they but knew it, almost all men in 
 their degree, some time or other, cherish very nearly the same feelings towards 
+<<<<<<< HEAD
 the ocean with me.
 
 the end
+=======
+the ocean with me. end
+>>>>>>> 3b8c55f2c606eed70af16d149097a0cdab613cb9

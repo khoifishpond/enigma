@@ -14,4 +14,8 @@ There is nothing surprising in this. If they but knew it, almost all men in
 their degree, some time or other, cherish very nearly the same feelings towards 
 the ocean with me.
 
+<<<<<<< HEAD
 The End
+=======
+The End.
+>>>>>>> 3b8c55f2c606eed70af16d149097a0cdab613cb9
