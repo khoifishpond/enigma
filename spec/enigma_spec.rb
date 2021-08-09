@@ -63,4 +63,15 @@ describe Enigma do
 
     expect(encrypted).to eq(expected)
   end
+
+  it 'can crack an encryption with a date' do
+    encrypted = enigma.encrypt("hello world end", "08304", "291018")
+    expected = {
+      decryption: "hello world end",
+      date: "291018",
+      key: "08304"
+    }
+    
+    expect(enigma.crack(encrypted[:encryption], "291018")).to eq(expected)
+  end
 end
