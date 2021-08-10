@@ -19,10 +19,6 @@ describe Message do
     expect(message.content).to eq("hello world!")
   end
 
-  it 'has an alphabet' do
-    expect(message.alphabet).to eq(("a".."z").to_a << " ")
-  end
-
   it 'can separate content into arrays of characters' do
     expected = [
       ["h", "e", "l", "l"],
