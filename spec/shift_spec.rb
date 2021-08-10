@@ -28,13 +28,8 @@ describe Shift do
     expect(shift.offsets).to eq([1, 0, 2, 5])
   end
 
-  it 'can create a hash of four shifts' do
-    expected = {
-      A: 3,
-      B: 27,
-      C: 73,
-      D: 20
-    }
+  it 'can create a collection of four shifts' do
+    expected = [3, 27, 73, 20]
 
     expect(shift.shifts).to eq(expected)
   end

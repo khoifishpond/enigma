@@ -15,11 +15,10 @@ class Shift
   end
 
   def shifts
-    shifts = {}
-    shifts[:A] = keys[0] + offsets[0]
-    shifts[:B] = keys[1] + offsets[1]
-    shifts[:C] = keys[2] + offsets[2]
-    shifts[:D] = keys[3] + offsets[3]
+    shifts = []
+    keys.each_with_index do |key, index|
+      shifts << key + offsets[index]
+    end
     shifts
   end
 end
