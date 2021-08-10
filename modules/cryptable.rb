@@ -16,12 +16,12 @@ module Cryptable
   end
 
   def encrypt(shift)
-    shifts = shift.shifts.values
+    shifts = shift.shifts
     rotate(shifts)
   end
 
   def decrypt(shift)
-    shifts = shift.shifts.values.map do |shift|
+    shifts = shift.shifts.map do |shift|
       shift * -1
     end
     rotate(shifts)
