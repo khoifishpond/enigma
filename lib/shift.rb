@@ -15,10 +15,8 @@ class Shift
   end
 
   def shifts
-    shifts = []
-    keys.each_with_index do |key, index|
-      shifts << key + offsets[index]
+    keys.map.with_index do |key, index|
+      key + offsets[index]
     end
-    shifts
   end
 end
