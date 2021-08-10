@@ -4,10 +4,10 @@ handle = File.open(ARGV[0], 'r')
 message = handle.read
 
 enigma = Enigma.new
-encryption = enigma.encrypt(message)
-cipher = encryption[:encryption]
-key = encryption[:key]
-date = encryption[:date]
+encrypted = enigma.encrypt(message)
+cipher = encrypted[:encryption]
+key = encrypted[:key]
+date = encrypted[:date]
 
 writer = File.open(ARGV[1], 'w')
 writer.write(cipher)
