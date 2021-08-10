@@ -1,11 +1,13 @@
 module Cryptable
+  ALPHABET = ("a".."z").to_a << " "
+  
   def rotate(shifts)
     message = ""
     separate.each do |characters|
       characters.each_with_index do |character, index|
-        if @alphabet.include?(character)
-          check_index = @alphabet.index(character)
-          rotated_alphabet = @alphabet.rotate(shifts[index])
+        if ALPHABET.include?(character)
+          check_index = ALPHABET.index(character)
+          rotated_alphabet = ALPHABET.rotate(shifts[index])
           message << rotated_alphabet[check_index]
         else
           message << character
