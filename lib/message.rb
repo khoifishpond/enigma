@@ -2,11 +2,10 @@ require './modules/cryptable'
 
 class Message
   include Cryptable
-  attr_reader :content, :alphabet
+  attr_reader :content
   
   def initialize(content)
     @content = content
-    @alphabet = ("a".."z").to_a << " "
   end
 
   def separate
